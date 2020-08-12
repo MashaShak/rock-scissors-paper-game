@@ -1,80 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <title>Project: Rock Paper Scissors</title>
-</head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Project: Rock Paper Scissors</title>
+</head> 
 <body>
-    <script>
-        let computerSelection;
-        let playerSelection;
-        let playerScore = 0;
-        let computerScore = 0;
-
-        function computerPlay() {
-            let computerChoice = 
-            ["scissors",
-            "rock",
-            "paper"
-            ];
-            return computerChoice[Math.floor(Math.random()*computerChoice.length)];   
-        }
-
-        function playerPlay() {
-            let value = prompt("Please choose your option: rock, paper, scissors!");
-            let playerChoice = value.toLowerCase();
-            if (
-                (playerChoice === "rock") ||
-                (playerChoice === "scissors") ||
-                (playerChoice === "paper")
-            ) return playerChoice;
-            else return value += " is not at option!"; 
-        }
-
-        function playRound(playerSelection, computerSelection) {
-            computerSelection = computerPlay();
-            playerSelection = playerPlay();
-            let message = "";
-            if (playerSelection === computerSelection) {
-            message = "Wow, Even-Steven! Please play again!";
-            } else if (
-                ((playerSelection === "rock") && (computerSelection === "scissors")) ||
-                ((playerSelection === "paper") && (computerSelection === "rock")) ||
-                ((playerSelection === "scissors") && (computerSelection === "paper"))
-             ) { 
-             message = `You won! Player:${playerSelection} beats Computer:${computerSelection}.`;
-             playerScore++; 
-            } else {
-                message = `You lost! Computer:${computerSelection} beats Player:${playerSelection}.`;
-                computerScore++;
-            }
-            let roundScore = `Round score: ${playerScore}:${computerScore}`; 
-            let roundresult = message + " " + roundScore;
-            return roundresult;
-        }
-
-        function game() {
-            let i;
-            let gameWinner;
-            let gamePlayerScore;
-            let gameComputerScore;
-
-            for (i = 0; i < 5; i++) {
-                console.log(playRound(playerSelection,computerSelection));
-                gamePlayerScore = playerScore;
-                gameComputerScore = computerScore;
-            }    
-            if (gamePlayerScore == gameComputerScore) {
-                 gameWinner = "Even-Steven, play again!";
-            } else if (gamePlayerScore > gameComputerScore) {
-                 gameWinner = "Player is a STAR!"
-            }
-            else gameWinner = "Computer WON!";
-            let gameResult = ` Game result: ${gamePlayerScore}:${gameComputerScore}`;
-            return gameWinner + gameResult; 
-           
-        }
-    </script>
+    <h1>Rock, Paper, Scissors game</h1>
+    <div id="result">
+        <h2>Score:</h2>
+        <span>You: </span><span id="pc">0</span> </br>
+        <span>Computer: </span><span id="cc">0</span>
+        <p>Round: <span id="round">0</span> / 5</p>
+    </div>
+    <div>
+        <button value='Rock' style="background:#e76f51;"><img src="icons8-hand-rock-100.png"/></button>
+        <button value='Paper' style="background: #e9c46a;"><img src="icons8-hand-100.png"/></button>
+        <button value='Scissors' style="background: #2a9d8f;"><img src="icons8-hand-scissors-100.png"/></button>
+    </div>
+    <div id="logmessage">
+    
+    </div>
+    <div id="footer">
+        Student project for <a href="#">The-Odin-Project</a> by me
+    </div>
+    <script src="script.js"></script>
 
 </body>
 </html>
