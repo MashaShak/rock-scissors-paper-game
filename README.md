@@ -1,7 +1,10 @@
 
 My first project using Javascript  - ROCK PAPER SCISSORS game.
 
-Build the script for: 
-- random computer choice;
-- fill in player choice;
-- function game() - play the game for 5 rounds and announce the winner in console.log
+index-console.html 
+Play the game with the random computer choice and player choice from promt window: 
+
+index.html 
+Play the game via UI interface. 
+Build the script to manipulate DOM html via javascript. 
+
